@@ -66,6 +66,7 @@ rpm:
     # - tilix
     - gnome-tweaks
     - nextcloud-client
+    - nextcloud-client-nautilus
 
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
