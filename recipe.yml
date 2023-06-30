@@ -75,7 +75,9 @@ rpm:
     - firefox
     - firefox-langpacks
     - nvtop
+    - htop
     - gnome-tour
+    - yelp
 
 # Configuration for the "first boot" experience, which is available after login.
 firstboot:
