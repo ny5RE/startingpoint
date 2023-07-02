@@ -65,7 +65,7 @@ rpm:
     # Example:
     # - tilix
     - gnome-tweaks
-    - neofetch
+    # - neofetch
     - nextcloud-client
     - nextcloud-client-nautilus
 
