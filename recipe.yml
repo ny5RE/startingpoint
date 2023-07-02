@@ -80,8 +80,8 @@ rpm:
     - gnome-tour
     - yelp
     - gnome-color-manager
-    - intel-media-driver
-    - libva-intel-driver
+    # - intel-media-driver
+    # - libva-intel-driver
 
 # Configuration for the "first boot" experience, which is available after login.
 firstboot:
