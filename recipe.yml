@@ -76,7 +76,7 @@ rpm:
     - firefox
     - firefox-langpacks
     - nvtop
- #   - htop
+    - htop
     - gnome-tour
     - yelp
     - gnome-color-manager
