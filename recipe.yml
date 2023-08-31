@@ -12,7 +12,7 @@ base-image: quay.io/fedora-ostree-desktops/silverblue
 # If you use `latest`, you will be automatically updated to the next major
 # Fedora version, assuming the image you're using as your base container
 # builds with the tag (all uBlue images do this).
-fedora-version: 37
+fedora-version: 38
 
 # This description will be visible in the container metadata.
 description: A starting point for further customization of uBlue images. Make your own! https://ublue.it/making-your-own/
@@ -49,6 +49,8 @@ rpm:
   repos:
     # Example (which also demonstrates version number expansion):
     # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%FEDORA_VERSION%/atim-starship-fedora-%FEDORA_VERSION%.repo
+    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
   # These RPMs will be installed from your enabled repositories (Fedora's own
   # repos, extra "repos" you've added, etc). The installation is automatically
@@ -65,24 +67,41 @@ rpm:
     # Add your own below:
     # Example:
     # - tilix
+    - mesa-va-drivers-freeworld
+    - mesa-vdpau-drivers-freeworld
+    - ffmpeg
+    - gstreamer1-plugin-libav
+    - gstreamer1-plugins-bad-free-extras
+    - gstreamer1-plugins-ugly
+    - gstreamer1-vaapi
+    - steam-devices
     - gnome-tweaks
     - neofetch
     - nextcloud-client
     - nextcloud-client-nautilus
+    - raw-thumbnailer
+    - ffmpeg-libs
+    - ffmpegthumbnailer
+    - libva-utils
+    - openrgb-udev-rules
 
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
   remove:
     # Remove the native firefox (from Fedora) in favor of the Flatpak.
+    - mesa-va-drivers
+    - libavfilter-free
+    - libavformat-free
+    - libavcodec-free
+    - libavutil-free
+    - libpostproc-free
+    - libswresample-free
+    - libswscale-free
     - firefox
     - firefox-langpacks
-    - nvtop
-    - htop
     - gnome-tour
     - yelp
     - gnome-color-manager
-    - intel-media-driver
-    - libva-intel-driver
 
 # Configuration for the "first boot" experience, which is available after login.
 firstboot:
